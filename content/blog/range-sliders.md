@@ -1,6 +1,6 @@
 ---
 external: false
-draft: false
+draft: true
 title: My Second Post
 description: This post is my first test.
 date: 2026-06-22
