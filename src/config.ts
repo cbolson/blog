@@ -5,7 +5,7 @@ export const SITE_TITLE = "I Digress";
 export const SITE_DESCRIPTION =
   "musings and observations, mostly about CSS";
 export const X_HANDLE = "@cbolson";
-export const bsky_HANDLE = "@cbolson";
+export const TWITTER_HANDLE = "@cbolson";
 export const MY_NAME = "Chris Bolson";
 
 // setup in astro.config.mjs
