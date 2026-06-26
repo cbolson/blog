@@ -55,3 +55,7 @@
 .fa-twitter-square:before {
   content: "\f081";
 }
+
+.fa-bluesky:before{
+  content: "\e671";
+}
