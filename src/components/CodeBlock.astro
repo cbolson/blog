@@ -1,8 +1,16 @@
 ---
 import { Prism } from "@astrojs/prism";
 
-const { language, content } = Astro.props;
+const { language = "js", content } = Astro.props;
 ---
+
+<div class="code-block" data-code-block>
+  <button class="copy-btn" data-copy-btn>
+    Copy
+  </button>
+
+  <Prism lang={language} code={content} />
+</div>
 
 <Prism lang={language} code={content} />
 
@@ -327,4 +335,41 @@ const { language, content } = Astro.props;
   .command-line .command-line-prompt > span:before {
     color: #8da1b9da;
   }
+
+
+  .code-block {
+    position: relative;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 12px;
+    padding: 4px 8px;
+    border: 1px solid #444;
+    background: #111;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  
 </style>
+
+<script is:inline>
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-copy-btn]");
+    if (!btn) return;
+
+    const wrapper = btn.closest("[data-code-block]");
+    const code = wrapper?.querySelector("pre")?.innerText;
+
+    if (!code) return;
+
+    navigator.clipboard.writeText(code);
+
+    btn.textContent = "Copied!";
+    setTimeout(() => (btn.textContent = "Copy"), 1200);
+  });
+</script>

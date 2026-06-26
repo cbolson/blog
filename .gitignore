@@ -1,26 +1,52 @@
+# =========================
 # build output
+# =========================
 dist/
+.astro/
 
+# =========================
 # dependencies
+# =========================
 node_modules/
 
+# =========================
 # logs
+# =========================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+*.log
 
-
+# =========================
 # environment variables
+# =========================
 .env
+.env.*.local
 .env.production
+.env.development
 
-# macOS-specific files
+# =========================
+# macOS
+# =========================
 .DS_Store
 
-# yarn
+# =========================
+# IDE / editor
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Astro specific (optional but useful)
+# =========================
+.astro/
+
+# =========================
+# yarn (only if you're NOT using yarn)
+# =========================
 .pnp.*
-.yarn/*
+.yarn/
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
